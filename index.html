@@ -326,6 +326,76 @@
         }
 
         /* ===========================
+           Documents Section
+           =========================== */
+
+        .documents {
+            padding: var(--spacing-2xl) var(--spacing-xl);
+            background-color: var(--light-gray);
+        }
+
+        .documents h2 {
+            color: var(--udf-blue);
+        }
+
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-2xl);
+            margin-top: var(--spacing-2xl);
+        }
+
+        .document-card {
+            background-color: var(--white);
+            border: 2px solid var(--udf-blue-lighter);
+            border-radius: 12px;
+            padding: var(--spacing-2xl);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 61, 130, 0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .document-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0, 61, 130, 0.15);
+            border-color: var(--udf-gold);
+        }
+
+        .document-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .document-card h3 {
+            color: var(--udf-blue);
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .document-card p {
+            color: #666;
+            margin-bottom: var(--spacing-lg);
+            flex-grow: 1;
+        }
+
+        .document-card a {
+            display: inline-block;
+            padding: var(--spacing-md) var(--spacing-lg);
+            background-color: var(--udf-blue);
+            color: var(--white);
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .document-card a:hover {
+            background-color: var(--udf-blue-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 61, 130, 0.3);
+        }
+
+        /* ===========================
            Contact Section
            =========================== */
 
@@ -411,7 +481,8 @@
             }
 
             .content-grid,
-            .features-list {
+            .features-list,
+            .documents-grid {
                 grid-template-columns: 1fr;
                 gap: var(--spacing-lg);
             }
@@ -481,6 +552,7 @@
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#conteudo">Conteúdo</a></li>
                 <li><a href="#recursos">Recursos</a></li>
+                <li><a href="#documentos">Documentos</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </div>
@@ -562,6 +634,40 @@
                 <div class="feature-item">
                     <h3>✓ Comunidade Ativa</h3>
                     <p>Conecte-se com outros desenvolvedores e aprenda juntos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documents Section -->
+    <section id="documentos" class="documents">
+        <div class="container">
+            <h2>📖 Documentos do Repositório</h2>
+            <p style="text-align: center; color: #666; margin-bottom: var(--spacing-2xl);">Acesse os documentos e recursos disponíveis neste repositório</p>
+            <div class="documents-grid">
+                <div class="document-card">
+                    <div class="document-icon">📄</div>
+                    <h3>README</h3>
+                    <p>Documentação principal do projeto com instruções de instalação, uso e contribuição.</p>
+                    <a href="https://github.com/Kadidjah/Portifolio_GitHub/blob/main/README.md" target="_blank">Acessar →</a>
+                </div>
+                <div class="document-card">
+                    <div class="document-icon">📋</div>
+                    <h3>Licença (CC0)</h3>
+                    <p>Creative Commons Zero v1.0 - Explore os termos de uso e distribuição do conteúdo.</p>
+                    <a href="https://github.com/Kadidjah/Portifolio_GitHub/blob/main/LICENSE" target="_blank">Acessar →</a>
+                </div>
+                <div class="document-card">
+                    <div class="document-icon">🎓</div>
+                    <h3>Vitrine Digital</h3>
+                    <p>Guia completo em PDF sobre como criar uma vitrine profissional no GitHub.</p>
+                    <a href="https://github.com/Kadidjah/Portifolio_GitHub/blob/main/Vitrine_Digital_no_GitHub.pdf" target="_blank">Baixar PDF →</a>
+                </div>
+                <div class="document-card">
+                    <div class="document-icon">📁</div>
+                    <h3>Pasta de Documentos</h3>
+                    <p>Repositório centralizado com todos os documentos e materiais de referência do curso.</p>
+                    <a href="https://github.com/Kadidjah/Portifolio_GitHub/tree/main/Documentos" target="_blank">Explorar →</a>
                 </div>
             </div>
         </div>
