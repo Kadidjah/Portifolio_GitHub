@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio GitHub - Guia prático de GitHub para iniciantes e desenvolvedores">
+    <meta name="author" content="Profª Kadidja Valéria">
+    <title>Portfólio GitHub - Cursos de Tecnologias de Informação</title>
+    <style>
+        /* ===========================
+           UDF Portfolio Styles
+           Colors: UDF Blue and Gold
+           =========================== */
+
+        :root {
+            /* UDF Colors */
+            --udf-blue: #003d82;
+            --udf-blue-light: #1a5fa0;
+            --udf-blue-lighter: #4a90c9;
+            --udf-gold: #ffd700;
+            --udf-gold-dark: #daa500;
+            
+            /* Additional Colors */
+            --dark-gray: #2c2c2c;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+            
+            /* Spacing */
+            --spacing-unit: 8px;
+            --spacing-sm: calc(var(--spacing-unit) * 1);
+            --spacing-md: calc(var(--spacing-unit) * 2);
+            --spacing-lg: calc(var(--spacing-unit) * 3);
+            --spacing-xl: calc(var(--spacing-unit) * 4);
+            --spacing-2xl: calc(var(--spacing-unit) * 6);
+        }
+
+        /* ===========================
+           Reset and Base Styles
+           =========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-xl);
+        }
+
+        /* ===========================
+           Typography
+           =========================== */
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--udf-blue);
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--udf-blue);
+            margin-bottom: var(--spacing-2xl);
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--udf-blue-light);
+        }
+
+        p {
+            margin-bottom: var(--spacing-md);
+            font-size: 1rem;
+        }
+
+        a {
+            color: var(--udf-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--udf-blue-light);
+        }
+
+        /* ===========================
+           Buttons
+           =========================== */
+
+        .btn {
+            display: inline-block;
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: var(--udf-blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--udf-blue-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 61, 130, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: var(--udf-gold);
+            color: var(--udf-blue);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--udf-gold-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+        }
+
+        /* ===========================
+           Navigation Bar
+           =========================== */
+
+        .navbar {
+            background-color: var(--udf-blue);
+            color: var(--white);
+            padding: var(--spacing-xl) 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            color: var(--white);
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-2xl);
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--udf-gold);
+        }
+
+        /* ===========================
+           Hero Section
+           =========================== */
+
+        .hero {
+            background: linear-gradient(135deg, var(--udf-blue) 0%, var(--udf-blue-light) 100%);
+            color: var(--white);
+            padding: 100px var(--spacing-xl);
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-2xl);
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* ===========================
+           About Section
+           =========================== */
+
+        .about {
+            padding: var(--spacing-2xl) var(--spacing-xl);
+            background-color: var(--light-gray);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* ===========================
+           Content Section
+           =========================== */
+
+        .content {
+            padding: var(--spacing-2xl) var(--spacing-xl);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-2xl);
+            margin-top: var(--spacing-2xl);
+        }
+
+        .content-card {
+            background-color: var(--white);
+            border: 2px solid var(--udf-blue);
+            border-radius: 12px;
+            padding: var(--spacing-2xl);
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 61, 130, 0.1);
+        }
+
+        .content-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0, 61, 130, 0.2);
+            border-color: var(--udf-gold);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .content-card h3 {
+            color: var(--udf-blue);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .content-card p {
+            color: var(--text-color);
+            margin-bottom: 0;
+        }
+
+        /* ===========================
+           Features Section
+           =========================== */
+
+        .features {
+            background: linear-gradient(135deg, rgba(0, 61, 130, 0.05) 0%, rgba(255, 215, 0, 0.05) 100%);
+            padding: var(--spacing-2xl) var(--spacing-xl);
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-2xl);
+            margin-top: var(--spacing-2xl);
+        }
+
+        .feature-item {
+            background-color: var(--white);
+            padding: var(--spacing-xl);
+            border-left: 4px solid var(--udf-gold);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-item h3 {
+            color: var(--udf-blue);
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .feature-item p {
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        /* ===========================
+           Contact Section
+           =========================== */
+
+        .contact {
+            background-color: var(--light-gray);
+            padding: var(--spacing-2xl) var(--spacing-xl);
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: var(--udf-blue);
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* ===========================
+           Footer
+           =========================== */
+
+        footer {
+            background-color: var(--udf-blue);
+            color: var(--white);
+            padding: var(--spacing-2xl) var(--spacing-xl);
+            text-align: center;
+            border-top: 4px solid var(--udf-gold);
+        }
+
+        .footer .container {
+            max-width: 100%;
+        }
+
+        .footer p {
+            margin-bottom: var(--spacing-md);
+            font-size: 0.95rem;
+        }
+
+        .footer p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===========================
+           Responsive Design
+           =========================== */
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .navbar .container {
+                flex-direction: column;
+                gap: var(--spacing-lg);
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                gap: var(--spacing-lg);
+                text-align: center;
+            }
+
+            .hero {
+                min-height: 350px;
+                padding: 50px var(--spacing-xl);
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .content-grid,
+            .features-list {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+
+            .container {
+                padding: 0 var(--spacing-lg);
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+                margin-bottom: var(--spacing-lg);
+            }
+
+            .hero {
+                min-height: 300px;
+                padding: 30px var(--spacing-md);
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: var(--spacing-md) var(--spacing-lg);
+                font-size: 0.9rem;
+            }
+
+            .nav-menu {
+                gap: var(--spacing-md);
+            }
+        }
+
+        /* ===========================
+           Print Styles
+           =========================== */
+
+        @media print {
+            .navbar {
+                position: static;
+            }
+
+            .btn {
+                border: 1px solid var(--udf-blue);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>Portfólio GitHub</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#conteudo">Conteúdo</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <h2>Bem-vindo ao Guia Prático de GitHub</h2>
+            <p>Aprenda a criar seu portfólio profissional com GitHub</p>
+            <a href="#sobre" class="btn btn-primary">Comece Agora</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <h2>Sobre este Projeto</h2>
+            <div class="about-content">
+                <p>
+                    Este é um guia prático e completo de GitHub para iniciantes e desenvolvedores, 
+                    com foco especial na criação de um portfólio profissional no GitHub para 
+                    estudantes de Tecnologias de Informação.
+                </p>
+                <p>
+                    Aprenda as melhores práticas, conceitos fundamentais e como apresentar seus 
+                    projetos de forma profissional e atraente.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section id="conteudo" class="content">
+        <div class="container">
+            <h2>Conteúdo do Curso</h2>
+            <div class="content-grid">
+                <div class="content-card">
+                    <div class="card-icon">📚</div>
+                    <h3>Fundamentos de Git</h3>
+                    <p>Aprenda os conceitos básicos de versionamento de código e como usar Git de forma eficiente.</p>
+                </div>
+                <div class="content-card">
+                    <div class="card-icon">🔧</div>
+                    <h3>GitHub Essentials</h3>
+                    <p>Domine o GitHub, branches, pull requests e colaboração em projetos.</p>
+                </div>
+                <div class="content-card">
+                    <div class="card-icon">📊</div>
+                    <h3>Portfólio Profissional</h3>
+                    <p>Crie um portfólio impressionante no GitHub que atraia recrutadores e empresas.</p>
+                </div>
+                <div class="content-card">
+                    <div class="card-icon">💼</div>
+                    <h3>Boas Práticas</h3>
+                    <p>Conheça as melhores práticas de desenvolvimento e como apresentar seus projetos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="recursos" class="features">
+        <div class="container">
+            <h2>Recursos Principais</h2>
+            <div class="features-list">
+                <div class="feature-item">
+                    <h3>✓ Guia Passo a Passo</h3>
+                    <p>Instruções claras e objetivas para cada etapa do processo</p>
+                </div>
+                <div class="feature-item">
+                    <h3>✓ Exemplos Práticos</h3>
+                    <p>Projetos reais e casos de uso para referência</p>
+                </div>
+                <div class="feature-item">
+                    <h3>✓ Documentação Completa</h3>
+                    <p>Referência detalhada de todos os conceitos</p>
+                </div>
+                <div class="feature-item">
+                    <h3>✓ Comunidade Ativa</h3>
+                    <p>Conecte-se com outros desenvolvedores e aprenda juntos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <p>Tem dúvidas? Quer saber mais sobre o curso?</p>
+            <a href="mailto:kadidja@example.com" class="btn btn-secondary">Envie uma Mensagem</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Profª Kadidja Valéria | Cursos de Tecnologias de Informação</p>
+            <p>Todos os direitos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>
